@@ -1,2 +1,19 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<br>
+
+<h1> This is view all </h1>
+
+<ul>
+	<%  @url.each do |t|  %>
+	<li>
+	<% link = t.short_url	%>	
+	<a href="/<%= t.short_url %>" > <%= t.short_url %> </a> </li>
+		<br>
+		<% end %>
+		</ul>
+
+<form action='/urls' method="post">
+	Enter URL:
+	<input type='text' name='long_url'>
+	<input type='submit' name='Submit'>
+</form>
+
