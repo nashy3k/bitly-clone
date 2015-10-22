@@ -3,13 +3,20 @@
 <h1> This is view all </h1>
 
 <ul>
-	<%  @url.each do |t|  %>
+	<%  @urls.each do |t|  %>
+
 	<li>
 	<% link = t.short_url	%>	
 	<a href="/<%= t.short_url %>" > <%= t.short_url %> </a> </li>
 		<br>
 		<% end %>
-		</ul>
+</ul>
+
+<% if @url %>
+	<% @url.errors.full_messages.each do |errors| %>
+		<p><%= errors %></p>
+	<% end %>
+<% end %>
 
 <form action='/urls' method="post">
 	Enter URL:

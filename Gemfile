@@ -26,6 +26,12 @@ gem 'rspec'
 
 gem 'byebug'
 
+# Adding dynamic forms for error collection views
+gem 'dynamic_form'
+
+# Adding public suffix for uri validation
+gem 'public_suffix'
+
 group :development, :test do
 	# Adding shotgun for local web hosting
 	gem 'shotgun'

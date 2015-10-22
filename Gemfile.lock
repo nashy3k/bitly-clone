@@ -20,12 +20,14 @@ GEM
     byebug (6.0.2)
     daemons (1.2.3)
     diff-lcs (1.2.5)
+    dynamic_form (1.1.4)
     eventmachine (1.0.8)
     i18n (0.7.0)
     json (1.8.3)
     minitest (5.8.1)
     multi_json (1.11.2)
     pg (0.18.3)
+    public_suffix (1.5.1)
     puma (2.14.0)
     rack (1.6.4)
     rack-protection (1.5.3)
@@ -83,7 +85,9 @@ DEPENDENCIES
   activerecord
   activesupport
   byebug
+  dynamic_form
   pg
+  public_suffix
   puma
   rails_12factor
   rake

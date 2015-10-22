@@ -22,6 +22,7 @@ require 'erb'
 require 'uri'
 ######################################################################
 require 'byebug'
+require 'public_suffix'
 
 # System Setup
 ######################################################################
@@ -35,7 +36,6 @@ use Rack::Session::Cookie, expire_after: ENV['SESSION_EXPIRE'] || 2592000, # sec
                            logging: true,
                            dump_errors: false,
                            app_file: __FILE__
-
 # Setup Models (M) and its database
 require APP_ROOT.join('config', 'database')
 
