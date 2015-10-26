@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+	<title> Prototype Sinatra </title>
+	<meta charset='utf-8'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha256-Sk3nkD6mLTMOF0EOpNtsIry+s1CsaqQC1rVLTAy+0yc= sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div class="container">
+	<header id="header" data-template="stage-header" class=" header-transparent">
+		<div id="header-inner" style="position:relative !important; background-color: #FFA500; text-align: center; height: 50px;" >
+			<div style="position: absolute; left: 100px; top: 0px;">
+				<img src="/img/brand_nash.gif">
+			</div>	
+			<div> 
+					<h1 id="header-logo" class="bitly" >
+						<a href="/" rel="no follow"> 
+							<span> Bitly </span>
+						</a>
+					</h1>
+			</div>
+			<div style="position: absolute; right: 180px; top: 10px;">
+				<form action='/urls' method="post">
+						<input type='text' name='long_url' placeholder="Paste a link to shorten it" autocomplete="off" autocorrect="off" autocapitalize="off">
+							<button type="submit"> Shorten </button>							
+				</form>
+			</div>
+		</div>
+	</header>
+</div>
+
+<div class="container"> 
+		<strong> Alpha </strong>
+
+		<div class="container"> 
+			<h1> This is a great little app	</h1>
+
+
+			<p> Url List </p>
+			<table class="table table-hover">
+				    <thead>
+      <tr>
+        <th>short url</th>
+        <th>long url</th>
+        <th>click count</th>
+      </tr>
+    </thead>
+				<tbody>
+					<tr>
+					<%  @urls.each do |t|  %>
+					<% link = t.short_url	%>	
+					<td><a href="/<%= t.short_url %>" > <%= t.short_url %> </a> </td>
+					<td><%= t.long_url %> </td>
+					<td><%= t.click_count %> </td>
+      		</tr>
+						<% end %>
+		    </tbody>
+		  </table>
+		</div>
+
+		<div id="body container" class="container">
+			<img src="/img/homepage_image-1200x466.png">
+		</div>
+
+	</body>
+</div>
+</html>

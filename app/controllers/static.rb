@@ -1,6 +1,6 @@
 get '/' do
 	@urls = Url.all
-  	erb :"static/index"
+  	erb :"layout"
 end
 
 post '/urls' do
@@ -10,7 +10,7 @@ post '/urls' do
 		redirect to '/'
 	else
 		@urls = Url.all
-		erb :"static/index"
+		erb :"layout"
 	end
 end
 

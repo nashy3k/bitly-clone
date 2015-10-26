@@ -1,0 +1,17 @@
+.header-logo {
+	/*position: relative;
+	float: center; /*float cannot mix with absolute*/ 
+/*text-align: center;*/
+font-family: "Droid Serif", serif; 
+color: green !important;
+margin-top: 25px;
+/*rgba(0, 255, 0, 0.3);*/
+/*height: 0;
+width: 20%;*/
+}
+
+.search_bar_nash {
+	position: absolute; 
+	right: 0; 
+	top: 0;
+}
