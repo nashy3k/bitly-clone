@@ -1,10 +1,10 @@
-.header-logo {
+.header-logo a:hover, a:{
 	/*position: relative;
 	float: center; /*float cannot mix with absolute*/ 
 /*text-align: center;*/
 font-family: "Droid Serif", serif; 
 color: green !important;
-margin-top: 25px;
+margin-top: 100px !important;
 /*rgba(0, 255, 0, 0.3);*/
 /*height: 0;
 width: 20%;*/
@@ -14,4 +14,8 @@ width: 20%;*/
 	position: absolute; 
 	right: 0; 
 	top: 0;
+}
+
+.active {
+    background-color:#556677;
 }
