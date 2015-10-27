@@ -24,7 +24,7 @@ This framework uses erb gem to generate the view. Views can be created fully or 
 #### To create partial erb view file:
 ```
 # app/views/partials/form.erb
-<h1>This is partial forms for AJAX calls</h1>
+<h1>This is partial forms for AJAX< calls</h1>
 ...
 # To use it in existing view .erb file, example:
 	# in app/views/users/new.erb

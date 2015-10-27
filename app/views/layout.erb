@@ -32,7 +32,7 @@
 			<div style="position: absolute; right: 180px; top: 10px;">
 				<form action='/urls' method="post">
 						<input type='text' name='long_url' placeholder="Paste a link to shorten it" autocomplete="off" autocorrect="off" autocapitalize="off">
-							<button type="submit" class="btn btn-primary"> Shorten </button>							
+							<button type="submit" class="btn btn-primary" id="loading"> Shorten </button>							
 				</form>
 			</div>
 		</div>
@@ -43,27 +43,40 @@
 		<span id="Alpha"><strong> Alpha </strong></span>
 
 		<div class="container"> 
-			<h1 data-toggle="tooltip" title="One day ill be a big app!" class="text-center"> This is a great little app	</h1>
+			<h1 id="display" data-toggle="tooltip" title="One day ill be a big app!" class="text-center"> This is a great little app	</h1>
 
+<!-- <a href="/all-links" id="allLink">All link</a> -->
 
+<!-- <div id="links">
+ <table>
+   <thead>
+     <th>Id</th>
+     <th>Short Url</th>
+     <th>Long Url</th>
+   </thead>
+   <tbody>
+   </tbody>
+ </table>
+</div> -->
+<br>
+		<div id="datatable">
 			<p> Url List </p>
 			<table class="table table-hover">
-				    <thead id="thead">
-      <tr>
-        <th>short url</th>
-        <th>long url</th>
-        <th>click count</th>
-      </tr>
-    </thead>
+				<thead id="thead">
+		      <tr>
+		        <th>short url</th>
+		        <th>long url</th>
+		        <th>click count</th>
+		      </tr>
+		    </thead>
 				<tbody>
-					<tr>
 					<%  @urls.each do |t|  %>
-					<% link = t.short_url	%>	
-					<td data-toggle="tooltip" title="Based on SecureRandom"><a href="/<%= t.short_url %>" > <%= t.short_url %> </a> </td>
-					<td data-toggle="tooltip" title="FQDN"><%= t.long_url %> </td>
-					<td data-toggle="tooltip" title="click throughs"><%= t.click_count %> </td>
-      		</tr>
-						<% end %>
+						<tr>
+							<td data-toggle="tooltip" title="Based on SecureRandom"><a href="/<%= t.short_url %>"> <%= t.short_url %> </a> </td>
+							<td data-toggle="tooltip" title="FQDN"><%= t.long_url %> </td>
+							<td data-toggle="tooltip" title="click throughs"><%= t.click_count %> </td>
+		    		</tr>
+					<% end %>
 		    </tbody>
 		  </table>
 		</div>
